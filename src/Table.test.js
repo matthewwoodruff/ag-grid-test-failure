@@ -3,20 +3,16 @@ import {Table} from "./Table";
 
 describe('Table', () => {
 
-    test('1', async () => {
+    test('1', () => {
         render(<Table/>);
 
-        const button = screen.getByText(/Change data/i);
-        fireEvent.click(button)
+        fireEvent.click(screen.getByText(/Change data/i))
     });
 
-    test('2', async () => {
+    test('2', () => {
         render(<Table/>);
 
-        const button = screen.getByText(/Change data/i);
-        fireEvent.click(button)
+        fireEvent.click(screen.getByText(/Change data/i))
     });
-
-
 })
 
