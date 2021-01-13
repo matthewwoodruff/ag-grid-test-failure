@@ -19,7 +19,7 @@ const generateData = () =>
         firstName: faker.name.firstName()
     }))
 
-export const Table = () => {
+export const Table = ({onGridReady}) => {
 
     const [rowData, setRowData] = useState(generateData());
 
@@ -35,6 +35,7 @@ export const Table = () => {
             columnDefs={columns}
             immutableData={true}
             getRowNodeId={(data) => data.id}
+            onGridReady={({api}) => onGridReady(api)}
         />
     </div>;
 }
