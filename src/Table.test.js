@@ -21,9 +21,9 @@ const controllablePromise = async () => {
 }
 
 const runTest = async () => {
-    const {promise, resolve} = await controllablePromise();
+    const {promise, resolve: resolveGridApi} = await controllablePromise();
 
-    render(<Table onGridReady={resolve}/>);
+    render(<Table onGridReady={resolveGridApi}/>);
 
     const api = await promise;
     expect(api.selectAll).toBeDefined()
@@ -35,5 +35,9 @@ describe('Table', () => {
 
     test('1', runTest);
     test('2', runTest);
+    test('3', runTest);
+    test('4', runTest);
+    test('5', runTest);
+    test('6', runTest);
 })
 
